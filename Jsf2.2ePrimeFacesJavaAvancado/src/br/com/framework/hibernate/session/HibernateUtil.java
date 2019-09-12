@@ -18,7 +18,7 @@ import br.com.framework.implementacao.crud.VariavelConexaoUtil;
 public class HibernateUtil implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
-//	 uma conexão p sistema inteiro
+//	 uma conexão p sistema inteiro 
 	private static SessionFactory factory = buildSessionFactory();
 
 //	Lê o file de config hibernate.cfg.xml
