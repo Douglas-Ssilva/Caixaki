@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Se o server cair, suba novamente.  maxActive quantas transações ativas quando o projeto subir. maxIdle conexões inativas.
+initialSize quantas conexões o server irá criar ao subir. validationQuery testa se a aplicação consegue interagir com o banco.
+testWhileIdle- verifica se há connections ociosas. testOnBorrow valida p passar a connection p pool.
+numTestsPerEvictionRun- valida as connections ociosas, a cada validação valida 5
+timeBetweenEvictionRunsMillis a cada 5 seg valida as connection
+minEvictableIdleTimeMillis tempo que a connection pode ficar dormindo. antiJARLocking- bloqueio de .jar -->
+<Context reloadable="true">
+
+	<Resource name="jdbc/datasource" auth="Container" type="javax.sql.DataSource" defaultAutoCommit="false"
+			  maxActive="50" maxIdle="10" maxWait="10" initialSize="10" driverClass="org.postgresql.Driver"
+			  validationQuery="SELECT 'OK'"	testWhileIdle="true" testOnBorrow="true" numTestsPerEvictionRun="5"
+			  timeBetweenEvictionRunsMillis="5000" minEvictableIdleTimeMillis="6000" antiJARLocking="false"
+			  antiResourceLocking="false" username="caixaki" password="admin" url="jdbc:postgresql://localhost:5432/ebook_jee?autoReconnect=true"
+			  />
+
+</Context>
